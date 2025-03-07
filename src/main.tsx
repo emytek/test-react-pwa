@@ -6,7 +6,7 @@ import "simplebar-react/dist/simplebar.min.css";
 import App from "./App.tsx";
 import { AppWrapper } from "./components/common/PageMeta.tsx";
 import { ThemeProvider } from "./context/ThemeContext.tsx";
-import { registerServiceWorker } from "./serviceWorker.ts";
+import { registerSW } from './utils/registerServiceWorker.ts';
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,4 +18,5 @@ createRoot(document.getElementById("root")!).render(
   </StrictMode>
 );
 
-registerServiceWorker();
+registerSW(); 
+
