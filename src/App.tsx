@@ -18,8 +18,11 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
+import useInstallPrompt from "./hooks/useInstallPrompt";
 
 export default function App() {
+  const { promptVisible, showInstallPrompt } = useInstallPrompt();
+
   return (
     <>
       <Router>
@@ -61,6 +64,12 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
+
+      {promptVisible && (
+        <button onClick={showInstallPrompt}>
+          Install PWA
+        </button>
+      )}
     </>
   );
 }
